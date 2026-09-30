@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://dsoaih5thqyj7"]
+
+[ext_resource type="PackedScene" uid="uid://cedh0b5v2s204" path="res://models/GothicCabinet_01_1k.gltf" id="1_wb46b"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g75o"]
+size = Vector3(0.72546387, 0.90289307, 0.061035156)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyhc8"]
+size = Vector3(1.7099915, 2.2225342, 1.0512695)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pgkk"]
+size = Vector3(0.10803223, 0.15338135, 0.14425659)
+
+[node name="Gothic cabinet" type="StaticBody3D" unique_id=316274301]
+
+[node name="GothicCabinet_01_1k" parent="." unique_id=622876945 instance=ExtResource("1_wb46b")]
+
+[node name="GothicCabinet_01_door4" parent="GothicCabinet_01_1k" index="1" unique_id=812675120]
+transform = Transform3D(0.99135745, 0, 0.13118836, 0, 1, 0, -0.13118836, 0, 0.99135745, 0.709, 0.744, 0.45)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GothicCabinet_01_1k/GothicCabinet_01_door4" index="0" unique_id=301881829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34857178, -0.0030822754, -0.016357362)
+shape = SubResource("BoxShape3D_6g75o")
+
+[node name="GothicCabinet_01_door3" parent="GothicCabinet_01_1k" index="2" unique_id=1469093184]
+transform = Transform3D(0.97214794, 0, -0.23436806, 0, 1, 0, 0.23436806, 0, 0.97214794, -0.691, 0.744, 0.45)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GothicCabinet_01_1k/GothicCabinet_01_door3" index="0" unique_id=870728441]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.34541976, -0.0030822754, -0.016357422)
+shape = SubResource("BoxShape3D_6g75o")
+
+[node name="GothicCabinet_01_door2" parent="GothicCabinet_01_1k" index="3" unique_id=1715342828]
+transform = Transform3D(0.96661955, 0, 0.25621602, 0, 1, 0, -0.25621602, 0, 0.96661955, 0.709, 1.746, 0.45)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GothicCabinet_01_1k/GothicCabinet_01_door2" index="0" unique_id=1935653378]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3490368, -0.0030822754, -0.016357422)
+shape = SubResource("BoxShape3D_6g75o")
+
+[node name="GothicCabinet_01_door1" parent="GothicCabinet_01_1k" index="4" unique_id=1263386083]
+transform = Transform3D(0.99859905, 0, 0.052912515, 0, 1, 0, -0.052912515, 0, 0.99859905, -0.691, 1.746, 0.45)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GothicCabinet_01_1k/GothicCabinet_01_door1" index="0" unique_id=1359022682]
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, 0.3364477, -0.0030822754, -0.016357422)
+shape = SubResource("BoxShape3D_6g75o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1529641365]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0016651154, 1.2672726, 0.037353516)
+shape = SubResource("BoxShape3D_yyhc8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1704730168]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7552475, 0.081142694, 0.45500684)
+shape = SubResource("BoxShape3D_5pgkk")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=89870922]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75946045, 0.0708313, -0.4151162)
+shape = SubResource("BoxShape3D_5pgkk")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=726995602]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76373994, 0.081142694, 0.44550294)
+shape = SubResource("BoxShape3D_5pgkk")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=921840252]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.76373994, 0.081142694, -0.41951853)
+shape = SubResource("BoxShape3D_5pgkk")
+
+[editable path="GothicCabinet_01_1k"]

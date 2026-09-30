@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b648x5mf1aaxp"]
+
+[ext_resource type="PackedScene" uid="uid://chso3nxhu36xs" path="res://models/vintage_suitcase_1k.gltf" id="1_qsgqm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ab78l"]
+size = Vector3(0.6967163, 0.54125977, 0.2420044)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g75o"]
+size = Vector3(0.694458, 0.5366211, 0.23925781)
+
+[node name="Vintage suitcases" type="RigidBody3D" unique_id=359891769]
+
+[node name="vintage_suitcase_1k" parent="." unique_id=250137713 instance=ExtResource("1_qsgqm")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=487978318]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.45913696, 0.26843262, -0.008270264)
+shape = SubResource("BoxShape3D_ab78l")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1358831081]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.45550537, 0.2697754, -0.008300781)
+shape = SubResource("BoxShape3D_6g75o")

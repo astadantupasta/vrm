@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://ce5l7ivare3r6"]
+
+[ext_resource type="PackedScene" uid="uid://b648x5mf1aaxp" path="res://prefabs/vintage_suitcases.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://b53g1n7desvbj" path="res://prefabs/vintage_binocular.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cgolxjxgg4u32" path="res://prefabs/round_spectacles.tscn" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://cbrs43p5xv60" path="res://prefabs/hanging_picture_frame.tscn" id="4_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://ci2w6bbt8athm" path="res://prefabs/green_chair.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://djjsd3nge0vbf" path="res://prefabs/gothic_commode.tscn" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dsoaih5thqyj7" path="res://prefabs/gothic_cabinet.tscn" id="7_272bh"]
+[ext_resource type="PackedScene" uid="uid://g6jmtc3nv61b" path="res://prefabs/gothic_bed.tscn" id="8_5vw27"]
+[ext_resource type="PackedScene" uid="uid://dt51cx4sjdrtr" path="res://prefabs/fancy_picture_frame.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://byniuc3d4uy4k" path="res://prefabs/brass_candleholders.tscn" id="10_4c57u"]
+[ext_resource type="Texture2D" uid="uid://dhjeyeycehx17" path="res://models/textures/wood_cabinet_worn_long_diff_1k.jpg" id="11_dg77c"]
+[ext_resource type="Texture2D" uid="uid://dk4rh2nxvy23b" path="res://models/textures/wood_cabinet_worn_long_nor_gl_1k.jpg" id="12_w48qg"]
+[ext_resource type="Texture2D" uid="uid://btauc3a805wt5" path="res://models/textures/wood_cabinet_worn_long_rough_1k.jpg" id="12_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://b58jdgkyuu5bl" path="res://models/textures/quatrefoil_jacquard_fabric_diff_1k.jpg" id="14_vivmo"]
+[ext_resource type="Texture2D" uid="uid://b4hx2q3c4sdmv" path="res://models/textures/quatrefoil_jacquard_fabric_nor_gl_1k.jpg" id="15_2cqfq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ab78l"]
+sky_top_color = Color(0, 0.4285317, 0.87932736, 1)
+sky_horizon_color = Color(0.77992934, 0.6175512, 0.49179167, 1)
+
+[sub_resource type="Sky" id="Sky_l4v2q"]
+sky_material = SubResource("ProceduralSkyMaterial_ab78l")
+
+[sub_resource type="Environment" id="Environment_vm6e6"]
+background_mode = 2
+sky = SubResource("Sky_l4v2q")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vm6e6"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vm6e6"]
+size = Vector3(5, 0.1, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4v2q"]
+albedo_texture = ExtResource("11_dg77c")
+albedo_texture_force_srgb = true
+roughness_texture = ExtResource("12_ycdy4")
+normal_enabled = true
+normal_texture = ExtResource("12_w48qg")
+uv1_scale = Vector3(10, 10, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_l4v2q"]
+size = Vector3(5, 3.5, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_l4v2q"]
+size = Vector3(5, 3.5, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
+albedo_texture = ExtResource("14_vivmo")
+roughness_texture = ExtResource("12_ycdy4")
+normal_enabled = true
+normal_texture = ExtResource("15_2cqfq")
+bent_normal_enabled = true
+uv1_scale = Vector3(2, 2, 2)
+
+[node name="Root" type="Node3D" unique_id=1824087711]
+
+[node name="Vintage suitcases" parent="." unique_id=359891769 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(0.29970175, 0, 0.95403296, 0, 1, 0, -0.95403296, 0, 0.29970175, -1.9060931, 0.052197218, -2.0329416)
+
+[node name="vintage_suitcase_01_bottom" parent="Vintage suitcases/vintage_suitcase_1k" parent_id_path=PackedInt32Array(359891769, 250137713) index="0" unique_id=1804547471]
+visible = false
+
+[node name="vintage_suitcase_01_clasp" parent="Vintage suitcases/vintage_suitcase_1k" parent_id_path=PackedInt32Array(359891769, 250137713) index="1" unique_id=979519796]
+visible = false
+
+[node name="vintage_suitcase_01_handle" parent="Vintage suitcases/vintage_suitcase_1k" parent_id_path=PackedInt32Array(359891769, 250137713) index="2" unique_id=1136932651]
+visible = false
+
+[node name="vintage_suitcase_01_top" parent="Vintage suitcases/vintage_suitcase_1k" parent_id_path=PackedInt32Array(359891769, 250137713) index="3" unique_id=1448983376]
+visible = false
+
+[node name="CollisionShape3D" parent="Vintage suitcases" index="1" unique_id=487978318]
+visible = false
+
+[node name="CollisionShape3D2" parent="Vintage suitcases" index="2" unique_id=1358831081]
+visible = false
+
+[node name="Vintage binocular" parent="." unique_id=219335837 instance=ExtResource("2_h2yge")]
+transform = Transform3D(0.13739482, 0, 0.99051636, 0, 1, 0, -0.99051636, 0, 0.13739482, -1.94332, 0.6172122, -1.5313165)
+
+[node name="Round spectacles" parent="." unique_id=48796571 instance=ExtResource("3_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22459465, 0.7704009, -1.9764252)
+
+[node name="Hanging picture frame" parent="." unique_id=321936085 instance=ExtResource("4_1bvp3")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.40984, 2.728919, 1.0233281)
+freeze = true
+
+[node name="Green chair" parent="." unique_id=1075653081 instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.92020196, 0, -0.39144388, 0, 1, 0, 0.39144388, 0, 0.92020196, 1.4212203, 0.047741532, -1.9169443)
+
+[node name="Gothic commode" parent="." unique_id=348980452 instance=ExtResource("6_7mycd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0748277, 0.05180037, -0.5214219)
+
+[node name="GothicCommode_01_door02" parent="Gothic commode/GothicCommode_01_1k" parent_id_path=PackedInt32Array(348980452, 1659384089) index="2" unique_id=1029266026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014870167, 0.667048, 0.6090139)
+
+[node name="Gothic cabinet" parent="." unique_id=2066145992 instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8727121, 0.055859208, 1.0222827)
+
+[node name="Gothic bed" parent="." unique_id=1228256199 instance=ExtResource("8_5vw27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020618558, 0.050243974, -1.2900419)
+
+[node name="Fancy picture frame" parent="." unique_id=1606734116 instance=ExtResource("9_kek77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07097578, 1.6603812, -2.371626)
+freeze = true
+
+[node name="Brass candleholders" parent="." unique_id=2019197564 instance=ExtResource("10_4c57u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5239525, 1.2709136, -0.497926)
+
+[node name="brass_candleholder_02" parent="Brass candleholders/brass_candleholders_1k" parent_id_path=PackedInt32Array(2019197564, 541511489) index="1" unique_id=185066559]
+visible = false
+
+[node name="brass_candleholder_01" parent="Brass candleholders/brass_candleholders_1k" parent_id_path=PackedInt32Array(2019197564, 541511489) index="2" unique_id=753547479]
+visible = false
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2003591757]
+transform = Transform3D(0.473838, -0.39279455, 0.7881562, 0.0733117, 0.9094979, 0.40919298, -0.87755513, -0.13611011, 0.4597511, 2.5710163, 2.3738475, 0.46318245)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1435018014]
+environment = SubResource("Environment_vm6e6")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=289102482]
+transform = Transform3D(0.27103353, 0.015961641, 0.96243757, -0.5400976, 0.83015627, 0.13832992, -0.79676557, -0.5573023, 0.23362103, 3.9819393, -0.116511464, 0.6722753)
+shadow_enabled = true
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=715648454]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2066860141]
+shape = SubResource("BoxShape3D_vm6e6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=712703403]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0002219677, 0.0059080124, -0.0024852753)
+mesh = SubResource("BoxMesh_vm6e6")
+surface_material_override/0 = SubResource("StandardMaterial3D_l4v2q")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1264220570]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=215779708]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7155879, -2.4506369)
+shape = SubResource("BoxShape3D_l4v2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=86753538]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005400181, 1.7202169, -2.452388)
+mesh = SubResource("BoxMesh_l4v2q")
+surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
+
+[node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=738378776]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=780631781]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4609356, 1.7155879, 0.05517268)
+shape = SubResource("BoxShape3D_l4v2q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D3" unique_id=702154538]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.461, 1.716, 0.055)
+mesh = SubResource("BoxMesh_l4v2q")
+surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
+
+[node name="Vintage suitcases2" parent="." unique_id=1724714044 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-0.4101754, -0.36979294, -0.8336722, -0.5072159, 0.85219246, -0.12845252, 0.75795025, 0.3701639, -0.53711337, -1.8509337, 0.028268814, -1.7567397)
+freeze = true
+
+[node name="vintage_suitcase_01_bottom" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="0" unique_id=1804547471]
+visible = false
+
+[node name="vintage_suitcase_01_clasp" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="1" unique_id=979519796]
+visible = false
+
+[node name="vintage_suitcase_01_handle" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="2" unique_id=1136932651]
+visible = false
+
+[node name="vintage_suitcase_01_top" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="3" unique_id=1448983376]
+visible = false
+
+[node name="CollisionShape3D" parent="Vintage suitcases2" index="1" unique_id=487978318]
+visible = false
+
+[node name="CollisionShape3D2" parent="Vintage suitcases2" index="2" unique_id=1358831081]
+visible = false
+
+[editable path="Vintage suitcases"]
+[editable path="Vintage suitcases/vintage_suitcase_1k"]
+[editable path="Gothic commode"]
+[editable path="Gothic commode/GothicCommode_01_1k"]
+[editable path="Brass candleholders"]
+[editable path="Brass candleholders/brass_candleholders_1k"]
+[editable path="Vintage suitcases2"]
+[editable path="Vintage suitcases2/vintage_suitcase_1k"]

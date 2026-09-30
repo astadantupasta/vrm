@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://b53g1n7desvbj"]
+
+[ext_resource type="PackedScene" uid="uid://bdgwbrbm3hax4" path="res://models/vintage_binocular_1k.gltf" id="1_w7p1g"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vm6e6"]
+height = 0.2134096
+radius = 0.03857422
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g75o"]
+size = Vector3(0.087402344, 0.050492797, 0.09075928)
+
+[node name="Vintage binocular" type="RigidBody3D" unique_id=219335837]
+
+[node name="vintage_binocular_1k" parent="." unique_id=1135184952 instance=ExtResource("1_w7p1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09054444, 0, -0.11956289)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1724083182]
+transform = Transform3D(-0.044749096, -0.12774694, 0.9907969, -0.9989799, -0.00027112663, -0.04515364, 0.00603687, -0.9918066, -0.12760451, -0.036845222, 0.003158616, -0.11797341)
+shape = SubResource("CylinderShape3D_vm6e6")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=93862489]
+transform = Transform3D(0.9899499, -0.12634294, 0.063547604, 0.06624602, 0.017264687, -0.997656, 0.12495379, 0.9918462, 0.025461294, -0.14161399, 0.0050734244, -0.11373189)
+shape = SubResource("CylinderShape3D_vm6e6")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1943493641]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.09448242, 0.02075849, -0.13186646)
+shape = SubResource("BoxShape3D_6g75o")

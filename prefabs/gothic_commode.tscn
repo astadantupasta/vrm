@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://djjsd3nge0vbf"]
+
+[ext_resource type="PackedScene" uid="uid://vqiufvsmr0g3" path="res://models/GothicCommode_01_1k.gltf" id="1_556lb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yyhc8"]
+size = Vector3(0.96777344, 0.19464111, 0.03112793)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pgkk"]
+size = Vector3(1.0160522, 0.2619629, 0.024902344)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_thiw2"]
+size = Vector3(0.97180176, 0.011413574, 0.49816895)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25nkv"]
+size = Vector3(0.028747559, 0.19641113, 0.45309067)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g75o"]
+size = Vector3(1.211792, 0.048324585, 0.5909424)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5uvl2"]
+size = Vector3(1.1528931, 1.0024414, 0.54138184)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gn5cw"]
+size = Vector3(0.12306976, 0.17019653, 0.121032715)
+
+[node name="Gothic commode" type="StaticBody3D" unique_id=472647392]
+
+[node name="GothicCommode_01_1k" parent="." unique_id=1659384089 instance=ExtResource("1_556lb")]
+
+[node name="GothicCommode_01_door02" parent="GothicCommode_01_1k" index="2" unique_id=1029266026]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001487, 0.667048, 0.51641196)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GothicCommode_01_1k/GothicCommode_01_door02" index="0" unique_id=1983442931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048828137, 0.009002686, -0.53674316)
+shape = SubResource("BoxShape3D_yyhc8")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="GothicCommode_01_1k/GothicCommode_01_door02" index="1" unique_id=1836832547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00064086926, -0.002319336, -0.037353516)
+shape = SubResource("BoxShape3D_5pgkk")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="GothicCommode_01_1k/GothicCommode_01_door02" index="2" unique_id=106064853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00048828137, 0.009002686, -0.065723896)
+shape = SubResource("BoxShape3D_yyhc8")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="GothicCommode_01_1k/GothicCommode_01_door02" index="3" unique_id=1406908924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00042724598, -0.08657837, -0.30010986)
+shape = SubResource("BoxShape3D_thiw2")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="GothicCommode_01_1k/GothicCommode_01_door02" index="4" unique_id=2107212190]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47216207, 0.004699707, -0.30410385)
+shape = SubResource("BoxShape3D_25nkv")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="GothicCommode_01_1k/GothicCommode_01_door02" index="5" unique_id=1731662971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46978265, 0.004699707, -0.29773903)
+shape = SubResource("BoxShape3D_25nkv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=911422281]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0004272461, 1.1881332, -0.0037231445)
+shape = SubResource("BoxShape3D_6g75o")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=432655159]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0010681152, 0.6599121, -0.0037231445)
+shape = SubResource("BoxShape3D_5uvl2")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1196063005]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53757095, 0.08329773, 0.22958374)
+shape = SubResource("BoxShape3D_gn5cw")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="." unique_id=1862515534]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53757095, 0.08329773, -0.22707361)
+shape = SubResource("BoxShape3D_gn5cw")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="." unique_id=1172436147]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53852975, 0.08329773, -0.22707361)
+shape = SubResource("BoxShape3D_gn5cw")
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="." unique_id=1462266041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.53852975, 0.08329773, 0.22884035)
+shape = SubResource("BoxShape3D_gn5cw")
+
+[editable path="GothicCommode_01_1k"]

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cbrs43p5xv60"]
+
+[ext_resource type="PackedScene" uid="uid://bv6flt1kqe7s3" path="res://models/hanging_picture_frame_03_1k.gltf" id="1_n4box"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vm6e6"]
+height = 0.034606934
+radius = 0.2626953
+
+[node name="Hanging picture frame" type="RigidBody3D" unique_id=321936085]
+
+[node name="hanging_picture_frame_03_1k" parent="." unique_id=1205170347 instance=ExtResource("1_n4box")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2055575688]
+transform = Transform3D(-0.7451427, -8.742277e-08, 0, -2.8474666e-15, 4.3711385e-08, -0.9799439, 6.5142444e-08, -0.99999994, -4.2834706e-08, 1.4220086e-09, -7.110043e-10, 0.01626587)
+shape = SubResource("CylinderShape3D_vm6e6")

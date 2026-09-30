@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dt51cx4sjdrtr"]
+
+[ext_resource type="PackedScene" uid="uid://c7ayqhn3k7hi3" path="res://models/fancy_picture_frame_01_1k.gltf" id="1_pco37"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6g75o"]
+size = Vector3(0.60461426, 0.47265625, 0.023742676)
+
+[node name="Fancy picture frame" type="RigidBody3D" unique_id=1606734116]
+
+[node name="fancy_picture_frame_01_1k" parent="." unique_id=1658622748 instance=ExtResource("1_pco37")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1120533955]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0004272461, 0.001953125, 0.011260986)
+shape = SubResource("BoxShape3D_6g75o")
