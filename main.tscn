@@ -6,15 +6,28 @@
 [ext_resource type="PackedScene" uid="uid://cbrs43p5xv60" path="res://prefabs/hanging_picture_frame.tscn" id="4_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://ci2w6bbt8athm" path="res://prefabs/green_chair.tscn" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://djjsd3nge0vbf" path="res://prefabs/gothic_commode.tscn" id="6_7mycd"]
+[ext_resource type="Script" uid="uid://p7lkx6adonlu" path="res://scripts/commode.gd" id="7_1u8w0"]
+[ext_resource type="PackedScene" uid="uid://5mpv7p6rll5m" path="res://models/round_spectacles_1k.gltf" id="7_82xsv"]
 [ext_resource type="PackedScene" uid="uid://dsoaih5thqyj7" path="res://prefabs/gothic_cabinet.tscn" id="7_272bh"]
 [ext_resource type="PackedScene" uid="uid://g6jmtc3nv61b" path="res://prefabs/gothic_bed.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dt51cx4sjdrtr" path="res://prefabs/fancy_picture_frame.tscn" id="9_kek77"]
 [ext_resource type="PackedScene" uid="uid://byniuc3d4uy4k" path="res://prefabs/brass_candleholders.tscn" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://bdgwbrbm3hax4" path="res://models/vintage_binocular_1k.gltf" id="10_getpj"]
+[ext_resource type="Script" uid="uid://5klp8cnkelwj" path="res://scripts/cabinet.gd" id="10_ryguw"]
 [ext_resource type="Texture2D" uid="uid://dhjeyeycehx17" path="res://models/textures/wood_cabinet_worn_long_diff_1k.jpg" id="11_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dk4rh2nxvy23b" path="res://models/textures/wood_cabinet_worn_long_nor_gl_1k.jpg" id="12_w48qg"]
 [ext_resource type="Texture2D" uid="uid://btauc3a805wt5" path="res://models/textures/wood_cabinet_worn_long_rough_1k.jpg" id="12_ycdy4"]
+[ext_resource type="Script" uid="uid://drv58q3ilfedj" path="res://scripts/picture_frame.gd" id="14_d13ii"]
 [ext_resource type="Texture2D" uid="uid://b58jdgkyuu5bl" path="res://models/textures/quatrefoil_jacquard_fabric_diff_1k.jpg" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b4hx2q3c4sdmv" path="res://models/textures/quatrefoil_jacquard_fabric_nor_gl_1k.jpg" id="15_2cqfq"]
+[ext_resource type="PackedScene" uid="uid://bwggrf7sbmkcv" path="res://PlayerCharacter/player_character_scene.tscn" id="16_2cqfq"]
+[ext_resource type="Script" uid="uid://drdvp3b4ngbi6" path="res://scripts/inventory.gd" id="17_yaehf"]
+[ext_resource type="Script" uid="uid://cu00xwke351fk" path="res://scripts/dropoff.gd" id="18_074og"]
+[ext_resource type="PackedScene" uid="uid://bu1grlygydiwa" path="res://models/GreenChair_01_1k.gltf" id="19_cegan"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_vm6e6"]
+height = 0.86026
+radius = 0.21289063
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ab78l"]
 sky_top_color = Color(0, 0.4285317, 0.87932736, 1)
@@ -39,13 +52,13 @@ albedo_texture_force_srgb = true
 roughness_texture = ExtResource("12_ycdy4")
 normal_enabled = true
 normal_texture = ExtResource("12_w48qg")
-uv1_scale = Vector3(10, 10, 10)
+uv1_scale = Vector3(40, 40, 40)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l4v2q"]
-size = Vector3(5, 3.5, 0.1)
+size = Vector3(20, 3.5, 0.1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_l4v2q"]
-size = Vector3(5, 3.5, 0.1)
+size = Vector3(20, 3.5, 0.1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vivmo"]
 albedo_texture = ExtResource("14_vivmo")
@@ -53,12 +66,18 @@ roughness_texture = ExtResource("12_ycdy4")
 normal_enabled = true
 normal_texture = ExtResource("15_2cqfq")
 bent_normal_enabled = true
-uv1_scale = Vector3(2, 2, 2)
+uv1_scale = Vector3(8, 8, 8)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vm6e6"]
+radius = 0.94994366
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l4v2q"]
+radius = 0.76587445
 
 [node name="Root" type="Node3D" unique_id=1824087711]
 
 [node name="Vintage suitcases" parent="." unique_id=359891769 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(0.29970175, 0, 0.95403296, 0, 1, 0, -0.95403296, 0, 0.29970175, -1.9060931, 0.052197218, -2.0329416)
+transform = Transform3D(0.29970175, 0, 0.95403296, 0, 1, 0, -0.95403296, 0, 0.29970175, -4.2715425, 0.052197218, -7.3154783)
 
 [node name="vintage_suitcase_01_bottom" parent="Vintage suitcases/vintage_suitcase_1k" parent_id_path=PackedInt32Array(359891769, 250137713) index="0" unique_id=1804547471]
 visible = false
@@ -78,43 +97,76 @@ visible = false
 [node name="CollisionShape3D2" parent="Vintage suitcases" index="2" unique_id=1358831081]
 visible = false
 
-[node name="Vintage binocular" parent="." unique_id=219335837 instance=ExtResource("2_h2yge")]
-transform = Transform3D(0.13739482, 0, 0.99051636, 0, 1, 0, -0.99051636, 0, 0.13739482, -1.94332, 0.6172122, -1.5313165)
+[node name="Vintage binocular" parent="." unique_id=219335837 groups=["pickup"] instance=ExtResource("2_h2yge")]
+transform = Transform3D(0.13739482, 0, 0.99051636, 0, 1, 0, -0.99051636, 0, 0.13739482, -4.3412437, 0.6172122, -7.012167)
+collision_layer = 2
 
-[node name="Round spectacles" parent="." unique_id=48796571 instance=ExtResource("3_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22459465, 0.7704009, -1.9764252)
+[node name="Round spectacles" parent="." unique_id=48796571 groups=["pickup"] instance=ExtResource("3_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31413522, 0.80772054, -9.509717)
+collision_layer = 2
 
 [node name="Hanging picture frame" parent="." unique_id=321936085 instance=ExtResource("4_1bvp3")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.40984, 2.728919, 1.0233281)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.876288, 1.6849027, -3.9979916)
 freeze = true
 
-[node name="Green chair" parent="." unique_id=1075653081 instance=ExtResource("5_lquwl")]
-transform = Transform3D(0.92020196, 0, -0.39144388, 0, 1, 0, 0.39144388, 0, 0.92020196, 1.4212203, 0.047741532, -1.9169443)
+[node name="Green chair" parent="." unique_id=1075653081 groups=["pickup"] instance=ExtResource("5_lquwl")]
+transform = Transform3D(0.92020196, 0, -0.39144388, 0, 1, 0, 0.39144388, 0, 0.92020196, 6.6152487, 0.047741055, -8.732503)
+collision_layer = 2
 
-[node name="Gothic commode" parent="." unique_id=348980452 instance=ExtResource("6_7mycd")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.0748277, 0.05180037, -0.5214219)
+[node name="Gothic commode" parent="." unique_id=348980452 node_paths=PackedStringArray("door", "reveal_node") instance=ExtResource("6_7mycd")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.600132, 0.05180037, -3.5579662)
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("7_1u8w0")
+door = NodePath("GothicCommode_01_1k/GothicCommode_01_door02")
+required_item = "Round spectacles"
+reveal_node = NodePath("GothicCommode_01_1k/GothicCommode_01_door02/round_spectacles_1k")
 
 [node name="GothicCommode_01_door02" parent="Gothic commode/GothicCommode_01_1k" parent_id_path=PackedInt32Array(348980452, 1659384089) index="2" unique_id=1029266026]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014870167, 0.667048, 0.6090139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014870167, 0.667048, 0.60901356)
 
-[node name="Gothic cabinet" parent="." unique_id=2066145992 instance=ExtResource("7_272bh")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -1.8727121, 0.055859208, 1.0222827)
+[node name="round_spectacles_1k" parent="Gothic commode/GothicCommode_01_1k/GothicCommode_01_door02" index="6" unique_id=780384375 instance=ExtResource("7_82xsv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18091083, -0.06576574, -0.234622)
+visible = false
+
+[node name="Gothic cabinet" parent="." unique_id=2066145992 node_paths=PackedStringArray("door", "hidden_item") instance=ExtResource("7_272bh")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.392895, 0.055859208, 1.0187858)
+collision_layer = 3
+script = ExtResource("10_ryguw")
+door = NodePath("GothicCabinet_01_1k/GothicCabinet_01_door2")
+hidden_item = NodePath("vintage_binocular_1k")
+
+[node name="GothicCabinet_01_door2" parent="Gothic cabinet/GothicCabinet_01_1k" parent_id_path=PackedInt32Array(2066145992, 622876945) index="3" unique_id=1715342828]
+transform = Transform3D(0.9968182, 0, 0.079709545, 0, 1, 0, -0.079709545, 0, 0.9968182, 0.709, 1.746, 0.4499998)
+layers = 3
+
+[node name="vintage_binocular_1k" parent="Gothic cabinet" unique_id=2124763809 instance=ExtResource("10_getpj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40239358, 1.3530946, 0.044216156)
+visible = false
 
 [node name="Gothic bed" parent="." unique_id=1228256199 instance=ExtResource("8_5vw27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020618558, 0.050243974, -1.2900419)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020618558, 0.050243974, -8.798822)
+collision_layer = 3
 
 [node name="Fancy picture frame" parent="." unique_id=1606734116 instance=ExtResource("9_kek77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07097578, 1.6603812, -2.371626)
+transform = Transform3D(0.88212687, -0.47101188, 0, 0.47101188, 0.88212687, 0, 0, 0, 1, -7.0627036, 1.6603812, -9.889452)
+collision_layer = 3
 freeze = true
+script = ExtResource("14_d13ii")
 
 [node name="Brass candleholders" parent="." unique_id=2019197564 instance=ExtResource("10_4c57u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5239525, 1.2709136, -0.497926)
+transform = Transform3D(-0.04876543, 0, -0.99881023, 0, 1, 0, 0.99881023, 0, -0.04876543, -9.496181, 1.3325305, -3.6983957)
+collision_layer = 3
 
 [node name="brass_candleholder_02" parent="Brass candleholders/brass_candleholders_1k" parent_id_path=PackedInt32Array(2019197564, 541511489) index="1" unique_id=185066559]
 visible = false
 
 [node name="brass_candleholder_01" parent="Brass candleholders/brass_candleholders_1k" parent_id_path=PackedInt32Array(2019197564, 541511489) index="2" unique_id=753547479]
 visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Brass candleholders" unique_id=40707808]
+transform = Transform3D(1.0000252, 0, 1.5683472e-06, 0, 1, 0, -1.5683472e-06, 0, 1.0000252, 0.40545774, 0.4275055, -0.019809723)
+shape = SubResource("CylinderShape3D_vm6e6")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2003591757]
 transform = Transform3D(0.473838, -0.39279455, 0.7881562, 0.0733117, 0.9094979, 0.40919298, -0.87755513, -0.13611011, 0.4597511, 2.5710163, 2.3738475, 0.46318245)
@@ -127,6 +179,7 @@ transform = Transform3D(0.27103353, 0.015961641, 0.96243757, -0.5400976, 0.83015
 shadow_enabled = true
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=715648454]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=2066860141]
 shape = SubResource("BoxShape3D_vm6e6")
@@ -137,17 +190,19 @@ mesh = SubResource("BoxMesh_vm6e6")
 surface_material_override/0 = SubResource("StandardMaterial3D_l4v2q")
 
 [node name="StaticBody3D2" type="StaticBody3D" parent="." unique_id=1264220570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.5059752)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2" unique_id=215779708]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7155879, -2.4506369)
 shape = SubResource("BoxShape3D_l4v2q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2" unique_id=86753538]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0005400181, 1.7202169, -2.452388)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014683008, 1.7202169, -2.457397)
 mesh = SubResource("BoxMesh_l4v2q")
 surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="." unique_id=738378776]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47269, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D3" unique_id=780631781]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -2.4609356, 1.7155879, 0.05517268)
@@ -159,7 +214,7 @@ mesh = SubResource("BoxMesh_l4v2q")
 surface_material_override/0 = SubResource("StandardMaterial3D_vivmo")
 
 [node name="Vintage suitcases2" parent="." unique_id=1724714044 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(-0.4101754, -0.36979294, -0.8336722, -0.5072159, 0.85219246, -0.12845252, 0.75795025, 0.3701639, -0.53711337, -1.8509337, 0.028268814, -1.7567397)
+transform = Transform3D(-0.4101754, -0.36979294, -0.8336722, -0.5072159, 0.85219246, -0.12845252, 0.75795025, 0.3701639, -0.53711337, -5.239887, 0.028268814, -6.526822)
 freeze = true
 
 [node name="vintage_suitcase_01_bottom" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="0" unique_id=1804547471]
@@ -174,16 +229,50 @@ visible = false
 [node name="vintage_suitcase_01_top" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="3" unique_id=1448983376]
 visible = false
 
+[node name="vintage_suitcase_02_bottom" parent="Vintage suitcases2/vintage_suitcase_1k" parent_id_path=PackedInt32Array(1724714044, 250137713) index="4" unique_id=2061102726]
+transform = Transform3D(1.5871642, 5.9604645e-08, 0, 0, -1.5871642, -1.7881393e-07, 5.9604645e-08, 2.3841858e-07, -1.5871643, -0.4591508, 0.011428118, -0.00069999695)
+
 [node name="CollisionShape3D" parent="Vintage suitcases2" index="1" unique_id=487978318]
 visible = false
 
 [node name="CollisionShape3D2" parent="Vintage suitcases2" index="2" unique_id=1358831081]
 visible = false
 
+[node name="PlayerCharacter" parent="." unique_id=1631114635 instance=ExtResource("16_2cqfq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0499101, 1.05, 0.49700737)
+
+[node name="Inventory" type="Area3D" parent="PlayerCharacter" unique_id=447567655]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005375147, 1.5600901, 0.01909697)
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("17_yaehf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCharacter/Inventory" unique_id=814222077]
+transform = Transform3D(1, 0, 0, 0, 1.98, 0, 0, 0, 1, 0, -1.673287, 0)
+shape = SubResource("SphereShape3D_vm6e6")
+
+[node name="ChairDropoff" type="Area3D" parent="." unique_id=1650331337 node_paths=PackedStringArray("reveal_node")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2377586, -0.4290383, -11.474543)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("18_074og")
+required_item = "Green chair"
+reveal_node = NodePath("GreenChair_hidden")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ChairDropoff" unique_id=513142594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3239162, 1.1701157, 2.5259666)
+shape = SubResource("SphereShape3D_l4v2q")
+
+[node name="GreenChair_hidden" parent="ChairDropoff" unique_id=1149140686 instance=ExtResource("19_cegan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001262188, 0.4290383, 2.1033401)
+visible = false
+
 [editable path="Vintage suitcases"]
 [editable path="Vintage suitcases/vintage_suitcase_1k"]
 [editable path="Gothic commode"]
 [editable path="Gothic commode/GothicCommode_01_1k"]
+[editable path="Gothic cabinet"]
+[editable path="Gothic cabinet/GothicCabinet_01_1k"]
 [editable path="Brass candleholders"]
 [editable path="Brass candleholders/brass_candleholders_1k"]
 [editable path="Vintage suitcases2"]
