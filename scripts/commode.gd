@@ -3,6 +3,7 @@ extends "res://scripts/dropoff.gd"
 @export var door: Node3D               
 @export var closed_z: float = 0.271    
 @export var close_time: float = 1.0    
+@export var close_sound: AudioStream
 
 var _inventory: Inventory = null
 var _closed := false
@@ -28,5 +29,6 @@ func _unhandled_input(event: InputEvent) -> void:
 	if _inventory == null or not _delivered or _closed:
 		return
 	_closed = true
+	FX.play_sound_at(close_sound, door.global_position)
 	var tween := create_tween().set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property(door, "position:z", closed_z, close_time)

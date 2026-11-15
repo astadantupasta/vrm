@@ -1,5 +1,6 @@
 class_name Inventory
 extends Area3D
+@export var pickup_sound: AudioStream
 
 var items: Array[String] = []
 
@@ -13,6 +14,7 @@ func _on_body_entered(body: Node3D):
 	print(body.name)
 	if body.is_in_group("pickup"):
 		add_item(body.name)
+		FX.play_sound_at(pickup_sound, body.global_position)
 		body.queue_free()
 		
 	if body.has_method("try_drop_off"):

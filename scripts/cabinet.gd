@@ -6,6 +6,9 @@ extends Node
 @export var open_angle: float = 90.0    
 @export var door_time: float = 1.0       # seconds to open or close
 @export var closed_angle: float = 4.6
+@export var open_sound: AudioStream
+@export var close_sound: AudioStream
+@export var place_sound: AudioStream
 
 var _inventory: Inventory = null
 var _is_open := false
@@ -33,11 +36,13 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func open_door():
 	if _is_open: return
+	FX.play_sound_at(open_sound, door.global_position)
 	_rotate_door_to(closed_angle + open_angle)
 	_is_open = true
 	
 func close_door():
 	if not _is_open: return
+	FX.play_sound_at(close_sound, door.global_position)
 	_rotate_door_to(closed_angle)
 	_is_open = false
 
@@ -49,6 +54,7 @@ func place_item():
 	_inventory.remove_item(required_item)
 	hidden_item.visible = true
 	_placed = true
+	FX.play_sound_at(place_sound, hidden_item.global_position)
 	print(required_item, " PLACED")
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

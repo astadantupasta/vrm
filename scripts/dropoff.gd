@@ -3,6 +3,7 @@ extends Node
 @export var required_item: String = ""   
 @export var reveal_node: Node3D          
 @export var consume_item: bool = true 
+@export var success_sound: AudioStream
 
 var _delivered := false
 
@@ -22,6 +23,7 @@ func try_drop_off(inventory: Inventory) -> void:
 		return
 		
 	reveal_node.visible = true
+	FX.play_sound_at(success_sound, reveal_node.global_position)
 	if consume_item:
 		inventory.remove_item(required_item)
 	_delivered = true

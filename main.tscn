@@ -9,14 +9,18 @@
 [ext_resource type="Script" uid="uid://p7lkx6adonlu" path="res://scripts/commode.gd" id="7_1u8w0"]
 [ext_resource type="PackedScene" uid="uid://5mpv7p6rll5m" path="res://models/round_spectacles_1k.gltf" id="7_82xsv"]
 [ext_resource type="PackedScene" uid="uid://dsoaih5thqyj7" path="res://prefabs/gothic_cabinet.tscn" id="7_272bh"]
+[ext_resource type="AudioStream" uid="uid://bdbotvb1ntnu" path="res://audio/sfx/drawer-close.mp3" id="8_4k2k6"]
 [ext_resource type="PackedScene" uid="uid://g6jmtc3nv61b" path="res://prefabs/gothic_bed.tscn" id="8_5vw27"]
+[ext_resource type="AudioStream" uid="uid://b0q2lnotdym7p" path="res://audio/sfx/cabinet-close.mp3" id="8_a6jrf"]
 [ext_resource type="PackedScene" uid="uid://dt51cx4sjdrtr" path="res://prefabs/fancy_picture_frame.tscn" id="9_kek77"]
+[ext_resource type="AudioStream" uid="uid://dly7ayigaan8" path="res://audio/sfx/drop-off.mp3" id="9_xuqvo"]
 [ext_resource type="PackedScene" uid="uid://byniuc3d4uy4k" path="res://prefabs/brass_candleholders.tscn" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://bdgwbrbm3hax4" path="res://models/vintage_binocular_1k.gltf" id="10_getpj"]
 [ext_resource type="Script" uid="uid://5klp8cnkelwj" path="res://scripts/cabinet.gd" id="10_ryguw"]
 [ext_resource type="Texture2D" uid="uid://dhjeyeycehx17" path="res://models/textures/wood_cabinet_worn_long_diff_1k.jpg" id="11_dg77c"]
 [ext_resource type="Texture2D" uid="uid://dk4rh2nxvy23b" path="res://models/textures/wood_cabinet_worn_long_nor_gl_1k.jpg" id="12_w48qg"]
 [ext_resource type="Texture2D" uid="uid://btauc3a805wt5" path="res://models/textures/wood_cabinet_worn_long_rough_1k.jpg" id="12_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://cb4y4fsogcpt4" path="res://audio/sfx/cabinet-open.mp3" id="13_0rl1p"]
 [ext_resource type="Script" uid="uid://drv58q3ilfedj" path="res://scripts/picture_frame.gd" id="14_d13ii"]
 [ext_resource type="Texture2D" uid="uid://b58jdgkyuu5bl" path="res://models/textures/quatrefoil_jacquard_fabric_diff_1k.jpg" id="14_vivmo"]
 [ext_resource type="Texture2D" uid="uid://b4hx2q3c4sdmv" path="res://models/textures/quatrefoil_jacquard_fabric_nor_gl_1k.jpg" id="15_2cqfq"]
@@ -24,6 +28,15 @@
 [ext_resource type="Script" uid="uid://drdvp3b4ngbi6" path="res://scripts/inventory.gd" id="17_yaehf"]
 [ext_resource type="Script" uid="uid://cu00xwke351fk" path="res://scripts/dropoff.gd" id="18_074og"]
 [ext_resource type="PackedScene" uid="uid://bu1grlygydiwa" path="res://models/GreenChair_01_1k.gltf" id="19_cegan"]
+[ext_resource type="AudioStream" uid="uid://bavgw1av3nf8p" path="res://audio/sfx/whoosh-painting.mp3" id="19_ok6jj"]
+[ext_resource type="AudioStream" uid="uid://bbusvtj0vpynp" path="res://audio/sfx/pick-up.mp3" id="25_qsp4k"]
+[ext_resource type="Script" uid="uid://dfw2d5ex02lf4" path="res://scripts/music_manager.gd" id="31_facbu"]
+[ext_resource type="AudioStream" uid="uid://bdpk0armf860" path="res://audio/music/10sec-beginning.mp3" id="32_b1qrp"]
+[ext_resource type="AudioStream" uid="uid://17qtig177mqh" path="res://audio/music/royal.mp3" id="33_come4"]
+[ext_resource type="AudioStream" uid="uid://baxrw8cit7dnh" path="res://audio/music/end.wav" id="34_h8e4i"]
+[ext_resource type="Script" uid="uid://bfsy7twmy8cic" path="res://scripts/random_sound.gd" id="35_0rl1p"]
+[ext_resource type="AudioStream" uid="uid://gme5cbg3upsr" path="res://audio/sfx/bird.mp3" id="35_ok6jj"]
+[ext_resource type="AudioStream" uid="uid://bj35hfds4j05i" path="res://audio/sfx/scary.ogg" id="37_facbu"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_vm6e6"]
 height = 0.86026
@@ -119,8 +132,10 @@ collision_layer = 3
 collision_mask = 3
 script = ExtResource("7_1u8w0")
 door = NodePath("GothicCommode_01_1k/GothicCommode_01_door02")
+close_sound = ExtResource("8_4k2k6")
 required_item = "Round spectacles"
 reveal_node = NodePath("GothicCommode_01_1k/GothicCommode_01_door02/round_spectacles_1k")
+success_sound = ExtResource("9_xuqvo")
 
 [node name="GothicCommode_01_door02" parent="Gothic commode/GothicCommode_01_1k" parent_id_path=PackedInt32Array(348980452, 1659384089) index="2" unique_id=1029266026]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0014870167, 0.667048, 0.60901356)
@@ -135,6 +150,9 @@ collision_layer = 3
 script = ExtResource("10_ryguw")
 door = NodePath("GothicCabinet_01_1k/GothicCabinet_01_door2")
 hidden_item = NodePath("vintage_binocular_1k")
+open_sound = ExtResource("13_0rl1p")
+close_sound = ExtResource("8_a6jrf")
+place_sound = ExtResource("9_xuqvo")
 
 [node name="GothicCabinet_01_door2" parent="Gothic cabinet/GothicCabinet_01_1k" parent_id_path=PackedInt32Array(2066145992, 622876945) index="3" unique_id=1715342828]
 transform = Transform3D(0.9968182, 0, 0.079709545, 0, 1, 0, -0.079709545, 0, 0.9968182, 0.709, 1.746, 0.4499998)
@@ -153,6 +171,7 @@ transform = Transform3D(0.88212687, -0.47101188, 0, 0.47101188, 0.88212687, 0, 0
 collision_layer = 3
 freeze = true
 script = ExtResource("14_d13ii")
+straighten_sound = ExtResource("19_ok6jj")
 
 [node name="Brass candleholders" parent="." unique_id=2019197564 instance=ExtResource("10_4c57u")]
 transform = Transform3D(-0.04876543, 0, -0.99881023, 0, 1, 0, 0.99881023, 0, -0.04876543, -9.496181, 1.3325305, -3.6983957)
@@ -246,6 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.005375147, 1.5600901, 0.019
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("17_yaehf")
+pickup_sound = ExtResource("25_qsp4k")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerCharacter/Inventory" unique_id=814222077]
 transform = Transform3D(1, 0, 0, 0, 1.98, 0, 0, 0, 1, 0, -1.673287, 0)
@@ -258,6 +278,7 @@ collision_mask = 4
 script = ExtResource("18_074og")
 required_item = "Green chair"
 reveal_node = NodePath("GreenChair_hidden")
+success_sound = ExtResource("9_xuqvo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ChairDropoff" unique_id=513142594]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3239162, 1.1701157, 2.5259666)
@@ -266,6 +287,29 @@ shape = SubResource("SphereShape3D_l4v2q")
 [node name="GreenChair_hidden" parent="ChairDropoff" unique_id=1149140686 instance=ExtResource("19_cegan")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001262188, 0.4290383, 2.1033401)
 visible = false
+
+[node name="Music" type="Node" parent="." unique_id=114061225]
+script = ExtResource("31_facbu")
+intro_stream = ExtResource("32_b1qrp")
+main_stream = ExtResource("33_come4")
+end_stream = ExtResource("34_h8e4i")
+fade_time = 0.5
+
+[node name="BirdSounds" type="AudioStreamPlayer3D" parent="." unique_id=645739828]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 3, 4)
+stream = ExtResource("35_ok6jj")
+volume_db = -4.0
+unit_size = 8.0
+script = ExtResource("35_0rl1p")
+first_wait = 3.0
+min_wait = 12.0
+max_wait = 20.0
+
+[node name="ScarySounds" type="AudioStreamPlayer3D" parent="." unique_id=572451620]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9, 1, -9)
+stream = ExtResource("37_facbu")
+unit_size = 4.0
+script = ExtResource("35_0rl1p")
 
 [editable path="Vintage suitcases"]
 [editable path="Vintage suitcases/vintage_suitcase_1k"]
